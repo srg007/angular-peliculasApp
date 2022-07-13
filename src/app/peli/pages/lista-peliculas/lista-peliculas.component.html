@@ -1,0 +1,25 @@
+<h2>Por Pelicula</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <app-input (onEnter)="buscar( $event )"
+      placeholder="Buscar pelicula..." ></app-input>
+    <app-pelicula-tabla></app-pelicula-tabla>
+  </div>
+</div>
+
+<hr>
+
+<div class="alert alert-danger" *ngIf="hayError">
+  No se encontro nada con el termino {{ termino }}
+</div>
+
+<div class="row" *ngIf="!hayError">
+  <div class="col">
+    <app-pelicula-tabla [peliculas]="pelicula" ></app-pelicula-tabla>
+
+  </div>
+</div>
+
+

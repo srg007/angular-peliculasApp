@@ -1,0 +1,56 @@
+<div class="alert alert-info" *ngIf="!peli;else divPeli">
+  Espere por favor...
+</div>
+
+<ng-template #divPeli>
+  <div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Pelicula: <small>{{ peli.Title }}</small></h2>
+        <hr>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <h3>Cartel</h3>
+        <hr>
+        <img [src]="peli.Poster" class="img-thumbnail">
+      </div>
+
+      <div class="col">
+        <h3>Informacion</h3>
+        <hr>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <strong>Fecha de Estreno</strong> {{ peli.Released}}
+          </li>
+          <li class="list-group-item">
+            <strong>Genero</strong> {{ peli.Genre }}
+          </li>
+          <li class="list-group-item">
+            <strong>Lenguaje</strong> {{ peli.Language }}
+          </li>
+          <li class="list-group-item">
+            <strong>Duracion</strong> {{ peli.Runtime }}
+          </li>
+          <li class="list-group-item">
+            <strong>Valoracion</strong> {{ peli.imdbRating }}
+          </li>
+          <li class="list-group-item">
+            <strong>Código numérico</strong> {{ peli.imdbID }}
+          </li>
+          <li class="list-group-item">
+            <strong>Resumen</strong> {{ peli.Plot }}
+          </li>
+
+
+        </ul>
+      </div>
+
+    </div>
+    <hr>
+
+
+  </div>
+</ng-template>

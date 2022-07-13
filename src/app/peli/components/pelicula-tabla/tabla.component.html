@@ -1,0 +1,28 @@
+<table *ngIf="peliculas.length > 0" class="table table-hover" >
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>IMG</th>
+      <th>Title</th>
+      <th>Released Date</th>
+      <th>Actors</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let peli of peliculas;index as i" class="animate__animated animate__fadeIn">
+      <td>{{ i + 1}}</td>
+      <td>
+        <img class="small-flag" [src]="peli.Poster">
+      </td>
+      <th>{{ peli.Title}}</th>
+      <td>{{ peli.Released }} </td>
+      <th>{{ peli.Actors}}</th>
+      <td>
+        <a routerLink="pelicula/{{peli.imdbID}}">Ver...</a>
+      </td>
+    </tr>
+  </tbody>
+
+</table>
