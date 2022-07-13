@@ -10,6 +10,7 @@ const routes: Routes = [
       path: '',
       component: PorPeliculaComponent,
       pathMatch: 'full'
+
   },
   {
       path: 'pelicula/:id',
